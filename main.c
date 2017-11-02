@@ -7,17 +7,12 @@
 char * permissions(mode_t foo){
 	char * tmp = (char *) malloc (9 * sizeof(char));
 	strcpy(tmp, "rwxrwxrwx");
-	int i = 2;
-	int j = 2;
+	int i = 8;
 	for (;i > -1; i--){ // work through foo right to left  
-		j = 2;
-		for (;j > -1 ; j--){
-			if ( ! (foo % 2) ){
-				tmp[3*i + j] = '-';
+		if ( ! (foo % 2) ){
+				tmp[i] = '-';
 			}
-			foo = foo >> 1;
-			//printf("\n%s\n", tmp);
-		} 
+			foo = foo >> 1; 
 	}
 
 	//printf("\n%s\n", tmp);
