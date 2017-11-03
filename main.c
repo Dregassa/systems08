@@ -30,7 +30,7 @@ int main(){
   	
 	//printf("\n%o\n", source.st_mode);
  	char * stuffs = permissions(source.st_mode);
-	printf("\n%s\n", stuffs);
+	printf("%s\n", stuffs);
 	free (stuffs);
 }
 
